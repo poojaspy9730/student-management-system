@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduManage | Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="bg-overlay" style="z-index: -2;"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <i class="fas fa-graduation-cap text-gradient"></i> EduManage
+        </a>
+        <div class="nav-links">
+            <a href="index.html" class="btn btn-secondary">
+                <i class="fas fa-home"></i> Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Dashboard Main Content -->
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <div>
+                <h2>Student Directory</h2>
+                <p class="text-secondary">Manage enrollments, statuses, and academic records.</p>
+            </div>
+            <button class="btn btn-primary" id="addStudentBtn">
+                <i class="fas fa-plus"></i> Add New Student
+            </button>
+        </div>
+
+        <div class="glass-panel" style="padding: 20px;">
+            <div class="controls">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search by name, email, or major...">
+                </div>
+                <select class="sort-select" id="sortBy">
+                    <option value="id">Sort by ID</option>
+                    <option value="first_name">First Name</option>
+                    <option value="last_name">Last Name</option>
+                    <option value="enrollment_date">Enrollment Date</option>
+                </select>
+                <select class="sort-select" id="sortOrder">
+                    <option value="ASC">Ascending</option>
+                    <option value="DESC">Descending</option>
+                </select>
+            </div>
+
+            <div class="table-container">
+                <table id="studentsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Major</th>
+                            <th>Enrollment Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody">
+                        <!-- Rows will be populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="loadingIndicator" style="text-align: center; padding: 20px; display: none;">
+                <i class="fas fa-spinner fa-spin fa-2x text-gradient"></i>
+            </div>
+            <div id="noDataMsg" style="text-align: center; padding: 20px; color: var(--text-secondary); display: none;">
+                No students found.
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Student Modal -->
+    <div class="modal-overlay" id="studentModal">
+        <div class="modal glass-panel">
+            <div class="modal-header">
+                <h3 id="modalTitle">Add Student</h3>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <form id="studentForm">
+                <input type="hidden" id="studentId">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" class="form-control" required minlength="2">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" class="form-control" required minlength="2">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="major">Major</label>
+                        <input type="text" id="major" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="enrollmentDate">Enrollment Date</label>
+                        <input type="date" id="enrollmentDate" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status" class="form-control" required>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                        <option value="Graduated">Graduated</option>
+                    </select>
+                </div>
+                <div id="formErrors" style="color: var(--danger); font-size: 0.85rem; margin-bottom: 10px;"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelModal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="saveStudentBtn">Save Student</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

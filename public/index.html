@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduManage | Enterprise Student Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <video class="bg-video" autoplay loop muted playsinline>
+        <source src="https://cdn.pixabay.com/vimeo/328424424/technology-22709.mp4?width=1280&hash=850684f88eabdf8b2c4c1a2f602410a80e14a2a1" type="video/mp4">
+    </video>
+    <div class="bg-overlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <i class="fas fa-graduation-cap text-gradient"></i> EduManage
+        </a>
+        <div class="nav-links">
+            <a href="dashboard.html" class="btn btn-primary">
+                Go to Dashboard <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1 class="hero-title">Manage Students with <span class="text-gradient">Intelligence</span></h1>
+        <p class="hero-subtitle">An enterprise-grade, fully relational CRUD system built for modern educational institutions. Fast, secure, and intuitive.</p>
+        <div class="hero-actions">
+            <a href="dashboard.html" class="btn btn-primary btn-lg">
+                <i class="fas fa-database"></i> Launch Application
+            </a>
+        </div>
+    </section>
+
+    <!-- Chatbot Interface -->
+    <div class="chatbot-container">
+        <div class="chatbot-window glass-panel" id="chatbotWindow">
+            <div class="chat-header">
+                <img src="assets/bot_avatar.png" alt="AI Bot" onerror="this.src='https://cdn-icons-png.flaticon.com/512/4712/4712035.png'">
+                <div>
+                    <h4 style="margin: 0; font-size: 1rem;">EduBot AI</h4>
+                    <small class="text-secondary" style="font-size: 0.75rem;">Online</small>
+                </div>
+                <button id="closeChat" style="margin-left: auto; background: none; border: none; color: white; cursor: pointer;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-msg bot">
+                    Hello! I'm EduBot. How can I assist you with the Student Management System today?
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" placeholder="Type your message...">
+                <button id="sendChat"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <i class="fas fa-comment-dots" style="color: white; font-size: 1.5rem;"></i>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
