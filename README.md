@@ -1,123 +1,135 @@
-# 🎓 Enterprise Student Management System
+# 🎓 EduManage | Advanced Student Management System
 
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+[![GitHub License](https://img.shields.io/github/license/poojaspy9730/internship-project-SDM-)](https://github.com/poojaspy9730/internship-project-SDM-/blob/main/LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/poojaspy9730/internship-project-SDM-)](https://github.com/poojaspy9730/internship-project-SDM-/stargazers)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D%2014.0.0-brightgreen)](https://nodejs.org/)
 
-A fully functional, enterprise-grade **Student Management System** built with a Node.js/Express backend, an SQLite database, and a beautiful, modern Vanilla JavaScript frontend. The project features a stunning glassmorphism UI, interactive elements, a chatbot, and a robust CRUD dashboard.
+**EduManage** is a modern, enterprise-grade Student Management System designed to streamline academic administration. Built with a robust Node.js backend and a sleek, responsive frontend, it offers a seamless experience for managing student records, monitoring enrollments, and interacting via an integrated AI chatbot.
+
+---
+
+## 🏗️ System Architecture
+
+Our architecture follows a clean MVC (Model-View-Controller) pattern to ensure scalability and maintainability.
+
+![System Architecture](docs/system_architecture.png)
+
+> **Backend:** Node.js & Express.js  
+> **Frontend:** Semantic HTML5, CSS3 (Glassmorphism UI), Vanilla JavaScript  
+> **Database:** SQLite (Relational)  
+
+---
+
+## 🔄 User Workflow
+
+Understanding how users interact with EduManage.
+
+![User Flowchart](docs/user_flowchart.png)
+
+1. **Dashboard Access:** Real-time overview of student statistics.
+2. **Student Directory:** Comprehensive CRUD operations (Create, Read, Update, Delete).
+3. **Smart Search:** Dynamic filtering by name, email, or major.
+4. **AI Assistance:** Integrated chatbot for quick navigation and support.
 
 ---
 
 ## ✨ Key Features
 
-- **Full CRUD Operations**: Seamlessly Create, Read, Update, and Delete student records.
-- **Advanced Data Table**: Real-time search by name, email, or major, along with dynamic column sorting.
-- **Premium User Interface**: Dark-mode aesthetic with glassmorphism, gradient accents, and CSS animations.
-- **AI Chatbot Interface**: An interactive widget designed to assist users with system navigation.
-- **Relational Integrity**: Built on an SQLite relational database ensuring structured, secure data storage.
-- **Zero Configuration**: Uses a local SQLite file (`database.sqlite`) meaning no heavy database server installation is required.
+- **🚀 Performance-Driven UI:** Ultra-fast, glassmorphic dashboard interface.
+- **📁 Student Lifecycle Management:** Track students from enrollment to graduation.
+- **🤖 Intelligent Chatbot:** Interactive assistant to help users manage records.
+- **🔍 Advanced Search & Sort:** Find and organize data instantly.
+- **🛡️ Data Integrity:** Secure SQLite storage with robust validation.
+- **📱 Fully Responsive:** Works perfectly on Desktops, Tablets, and Mobile.
 
 ---
 
-## 🏗️ Architecture
+## 🛠️ Technology Stack
 
-The application follows a strict **Model-View-Controller (MVC)** architectural pattern to ensure a clean separation of concerns and highly maintainable code.
-
-### System Flowchart
-
-```mermaid
-graph TD
-    A[Client Browser] -->|HTTP Request| B(Express Router)
-    B -->|Route mapping| C{Student Controller}
-    C -->|Validates Data| D[Student Model]
-    D -->|SQL Queries| E[(SQLite Database)]
-    E -->|Returns Data| D
-    D -->|Returns Objects| C
-    C -->|JSON Response| B
-    B -->|HTTP Response| A
-```
-
-### Directory Structure
-
-```text
-📦 student-management-system
-├── 📂 config/
-│   └── 📄 db.js                 # SQLite database connection setup
-├── 📂 controllers/
-│   └── 📄 studentController.js  # Business logic and input validation
-├── 📂 models/
-│   └── 📄 studentModel.js       # Database SQL queries
-├── 📂 routes/
-│   └── 📄 studentRoutes.js      # API route definitions
-├── 📂 public/                   # Frontend Assets (Views)
-│   ├── 📄 index.html            # Landing page with chatbot
-│   ├── 📄 dashboard.html        # Main CRUD application UI
-│   ├── 📂 css/
-│   │   └── 📄 style.css         # Premium UI styles
-│   ├── 📂 js/
-│   │   ├── 📄 main.js           # UI animations
-│   │   ├── 📄 chatbot.js        # Chatbot interaction logic
-│   │   └── 📄 dashboard.js      # Frontend API integration
-│   └── 📂 assets/               # Images and icons
-├── 📄 init_db.js                # Script to create DB schema
-├── 📄 seed_db.js                # Script to populate mock data
-└── 📄 server.js                 # Express Application entry point
-```
+| Layer | Technology |
+|---|---|
+| **Frontend** | HTML5, CSS3, JavaScript (ES6+) |
+| **Backend** | Node.js, Express.js |
+| **Database** | SQLite3 |
+| **Icons & Fonts** | FontAwesome 6, Google Fonts (Inter) |
+| **Styling** | Modern Vanilla CSS (No Framework dependencies) |
 
 ---
 
 ## 🚀 Getting Started
 
-Follow these steps to run the application on your local machine.
+Follow these steps to set up EduManage on your local machine.
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (v14 or higher) installed.
+
+- [Node.js](https://nodejs.org/) installed (v14 or higher)
+- [Git](https://git-scm.com/) installed
 
 ### Installation
 
-1. **Clone the repository:**
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/poojaspy9730/student-management-system.git
-   cd student-management-system
+   git clone https://github.com/poojaspy9730/internship-project-SDM-
+   cd internship-project-SDM-
    ```
 
-2. **Install dependencies:**
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. **Initialize the Database:**
-   *This command creates the `database.sqlite` file and the `students` table.*
+3. **Initialize the database** (Optional if `database.sqlite` is already present)
    ```bash
    node init_db.js
-   ```
-
-4. *(Optional)* **Seed the Database:**
-   *Run this to populate the database with sample student data.*
-   ```bash
    node seed_db.js
    ```
 
-5. **Start the Application:**
+4. **Start the server**
    ```bash
-   node server.js
+   npm start
    ```
 
-6. **View the App:**
-   Open your browser and navigate to `http://localhost:3000`.
+5. **Open in Browser**
+   Navigate to `http://localhost:3000`
 
 ---
 
-## 🛠️ Built With
+## 📂 Project Structure
 
-* **Backend**: Node.js, Express.js
-* **Database**: SQLite (via `sqlite` and `sqlite3` packages)
-* **Frontend**: HTML5, Vanilla CSS3, Vanilla JavaScript (ES6+)
-* **Icons**: FontAwesome
+```text
+├── config/             # Database configurations
+├── controllers/        # Business logic for API endpoints
+├── models/             # Database schemas and models
+├── public/             # Static files (HTML, CSS, JS)
+│   ├── css/            # Stylesheets
+│   ├── js/             # Frontend logic (Dashboard, Chatbot)
+│   └── assets/         # Images and icons
+├── routes/             # Express API routes
+├── server.js           # Main application entry point
+└── database.sqlite     # SQLite database file
+```
 
 ---
 
-*Designed and developed as an enterprise-grade CRUD application demonstration.*
+## 🏷️ Tags
+`#StudentManagement` `#NodeJS` `#ExpressJS` `#SQLite` `#WebDevelopment` `#EducationTech` `#Javascript` `#FullStack`
+
+---
+
+## 🤝 Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+Developed with ❤️ by [Pooja](https://github.com/poojaspy9730)
