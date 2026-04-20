@@ -13,14 +13,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
+const publicPath = path.join(process.cwd(), 'public');
+app.use(express.static(publicPath));
 
 // API Routes
 app.use('/api/students', studentRoutes);
 
-// Fallback to index.html for unknown routes (SPA-like behavior if needed)
-app.use((req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+// Fallback to index.html for unknown routes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(publicPath, 'index.html'));
 });
 
 // Start Server

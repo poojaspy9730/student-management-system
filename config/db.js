@@ -4,7 +4,7 @@ const path = require('path');
 
 // Global promise for the db connection
 const dbPromise = open({
-  filename: path.join(__dirname, '../database.sqlite'),
+  filename: path.join(process.cwd(), 'database.sqlite'),
   driver: sqlite3.Database
 });
 
